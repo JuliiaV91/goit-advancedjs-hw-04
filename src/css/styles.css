@@ -25,7 +25,8 @@
   border-radius: 4px;
 }
 
-.search-btn {
+.search-btn,
+.load-more {
   font-size: 14px;
   padding: 10px 20px;
   background-color: #4E75FF;
@@ -38,6 +39,22 @@
 }
 .search-btn:hover {
   background-color: #6C8CFF;
+}
+
+.load-more {
+  display: block;
+  margin: 20px auto 0px auto;
+  transition: opacity 250ms linear;
+}
+
+.load-more:hover,
+.load-more:focus {
+  opacity: 0.8;
+  background-color: #6C8CFF;
+}
+
+.load-more.is-hidden {
+  display: none;
 }
 
 .gallery {
