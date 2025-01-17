@@ -88,15 +88,15 @@
 }
 
 .loader {
-  position: absolute;
+  position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   transform: rotateZ(45deg);
   perspective: 1000px;
   border-radius: 50%;
-  width: 48px;
-  height: 48px;
+  width: 116px;
+  height: 116px;
   color: #0f1ea2;
 }
 

@@ -76,6 +76,9 @@ searchFormEl.addEventListener('submit', onSearchFormSubmit);
 
 const onLoadMoreBtnClick = async event => {
             try {
+                // Ховаємо кнопку і показуємо лоадер
+                loadMoreBtnEl.classList.add('is-hidden');
+                loaderEl.classList.remove('is-hidden');
                 page++;
                 const response = await fetchPhotosByQuery(inputValue, page);
                 galleryEl.insertAdjacentHTML('beforeend', createGalleryCardTemplate(response.data.hits));
@@ -95,10 +98,14 @@ const onLoadMoreBtnClick = async event => {
                         position: "topRight",
                         icon: "",
             });
-
+                    loaderEl.classList.add('is-hidden'); 
                     return;
                 }
+                 // Показуємо кнопку після завершення завантаження
+                loaderEl.classList.add('is-hidden');
+                loadMoreBtnEl.classList.remove('is-hidden');
                 lightbox.refresh();
+                
             } catch (err) {
                 console.log(err);
             }
